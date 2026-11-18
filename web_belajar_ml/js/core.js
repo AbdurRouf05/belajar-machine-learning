@@ -74,19 +74,19 @@
      content: string HTML atau Node
   */
   const BOX = {
-    analogi: ['💡', 'Analogi Sehari-hari'],
-    rumus: ['📐', 'Rumus'],
-    coba: ['🎮', 'Coba Sendiri'],
-    langkah: ['🧮', 'Langkah Hitung'],
-    info: ['📌', 'Catatan'],
-    bisindo: ['🤟', 'Kaitan dengan Proyek BISINDO'],
+    analogi: 'Analogi',
+    rumus: 'Rumus',
+    coba: 'Coba sendiri',
+    langkah: 'Langkah hitung',
+    info: 'Catatan',
+    bisindo: 'Kaitan dengan proyek BISINDO',
   };
   ML.box = function (type, title, content) {
-    const [ico, def] = BOX[type] || BOX.info;
+    const def = BOX[type] || BOX.info;
     const body = h('div', { class: 'box-body' });
     if (content instanceof Node) body.append(content);
     else if (content != null) body.innerHTML = content;
-    return h('div', { class: 'box ' + type }, h('div', { class: 'box-title' }, h('span', { class: 'ico' }, ico), title || def), body);
+    return h('div', { class: 'box ' + type }, h('div', { class: 'box-title' }, title || def), body);
   };
 
   /* rumus: ML.formula('<span class="var">z</span> = w·x + b') -> div.formula
@@ -414,7 +414,7 @@
           btns[item.answer].classList.add('correct'); btns[item.answer].insertAdjacentHTML('beforeend', ' ✓');
           if (!ok) { btns[oi].classList.add('wrong'); btns[oi].insertAdjacentHTML('beforeend', ' ✗'); }
           explain.innerHTML = (ok ? '<b>Benar!</b> ' : '<b>Belum tepat.</b> ') + (item.explain || '');
-          if (answered === qs.length) score.textContent = `Skor kamu: ${correct} dari ${qs.length} ${correct === qs.length ? '🎉' : '— coba baca lagi bagian yang salah ya'}`;
+          if (answered === qs.length) score.textContent = `Skor kamu: ${correct} dari ${qs.length} ${correct === qs.length ? '. Semua benar.' : '. Baca lagi bagian yang salah, lalu coba lagi.'}`;
         } }));
       btns.forEach((b) => box.append(b));
       box.append(explain);

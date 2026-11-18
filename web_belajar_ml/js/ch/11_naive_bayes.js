@@ -76,7 +76,7 @@ ML.chapter({
       tidak memengaruhi kata lain. Padahal kenyataannya kata "machine" dan "learning" sering muncul bersama.` }));
     el.append(ML.html(`<div class="grid2">
       <div class="stat"><div class="k">KENYATAAN</div>
-        <div style="font-size:16px;margin:10px 0;text-align:center">machine <span style="color:var(--text-3)">◄── sering bersama ──►</span> learning</div>
+        <div style="font-size:16px;margin:10px 0;text-align:center">machine <span style="color:var(--text-3)">←── sering bersama ──→</span> learning</div>
         <div class="d">kata-kata saling berhubungan</div></div>
       <div class="stat"><div class="k">ANGGAPAN NAIVE BAYES</div>
         <div style="font-size:16px;margin:10px 0;text-align:center">P(machine) &nbsp;×&nbsp; P(learning)</div>

@@ -135,7 +135,7 @@ ML.chapter({
         const on = i === sel;
         const tr = h('tr', { style: 'cursor:pointer' + (on ? ';outline:2.5px solid var(--accent);outline-offset:-1px' : ''), title: 'klik untuk lihat langkah hitung',
           onclick: () => { sel = i; update(); } },
-        h('td', { class: 'l', html: `${on ? '▶ ' : ''}<b>Dok ${i + 1}</b> <span class="muted">"${esc(d.text)}"</span>` }),
+        h('td', { class: 'l', html: `${on ? '' : ''}<b>Dok ${i + 1}</b> <span class="muted">"${esc(d.text)}"</span>` }),
         ...d.nv.map((x) => h('td', { class: 'mono', style: shade(x) + ';font-family:var(--mono)' }, f2(x))));
         t.append(tr);
       });

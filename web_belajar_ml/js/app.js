@@ -17,7 +17,7 @@
   const themeBtn = document.getElementById('theme-btn');
   const applyTheme = (t) => {
     document.documentElement.setAttribute('data-theme', t);
-    themeBtn.textContent = t === 'dark' ? '☀️ Mode terang' : '🌙 Mode gelap';
+    themeBtn.textContent = t === 'dark' ? 'Mode terang' : 'Mode gelap';
     ML.redrawAll();
   };
   let theme = localStorage.getItem('belajar-ml-tema') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -59,9 +59,9 @@
     const isDone = done.has(c.id);
     const doneBtn = h('button', { class: 'done-btn ' + (isDone ? '' : 'primary'), onclick: () => {
       done.has(c.id) ? done.delete(c.id) : done.add(c.id); save(); updateProgress();
-      doneBtn.textContent = done.has(c.id) ? '✓ Sudah paham (klik untuk batal)' : '✔ Tandai: saya sudah paham bab ini';
+      doneBtn.textContent = done.has(c.id) ? 'Sudah paham (klik untuk batal)' : 'Tandai: saya sudah paham bab ini';
       doneBtn.classList.toggle('primary', !done.has(c.id));
-    } }, isDone ? '✓ Sudah paham (klik untuk batal)' : '✔ Tandai: saya sudah paham bab ini');
+    } }, isDone ? 'Sudah paham (klik untuk batal)' : 'Tandai: saya sudah paham bab ini');
     main.append(doneBtn);
     const prev = chs[i - 1], next = chs[i + 1];
     main.append(h('div', { class: 'pager' },

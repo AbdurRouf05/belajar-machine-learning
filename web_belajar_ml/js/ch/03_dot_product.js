@@ -27,12 +27,12 @@ ML.chapter({
 
     // ---------- editor vektor + animasi ----------
     el.append(h('h3', {}, 'Coba: Kalikan per Posisi, lalu Jumlahkan'));
-    el.append(box('coba', null, 'Ganti angka di vektor <b>a</b> dan <b>b</b>, atau tambah/kurangi jumlah posisinya. Tekan <b>▶ Putar animasi</b> untuk melihat urutan hitungnya pelan-pelan.'));
+    el.append(box('coba', null, 'Ganti angka di vektor <b>a</b> dan <b>b</b>, atau tambah/kurangi jumlah posisinya. Tekan <b>Putar animasi</b> untuk melihat urutan hitungnya pelan-pelan.'));
     let A = [1, 2, 3], B = [4, 5, 6];
     const editor = h('div');
     const visual = h('div', { style: 'margin:12px 0' });
     const dotSteps = h('div');
-    const btnAnim = h('button', { class: 'primary', onclick: () => animate() }, '▶ Putar animasi');
+    const btnAnim = h('button', { class: 'primary', onclick: () => animate() }, 'Putar animasi');
     const btnPlus = h('button', { onclick: () => { if (A.length < 6) { A.push(1); B.push(1); buildEditor(); update(); } } }, '+ posisi');
     const btnMinus = h('button', { onclick: () => { if (A.length > 2) { A.pop(); B.pop(); buildEditor(); update(); } } }, '− posisi');
     const btnReset = h('button', { onclick: () => { A = [1, 2, 3]; B = [4, 5, 6]; buildEditor(); update(); } }, '↺ contoh awal');
@@ -69,7 +69,7 @@ ML.chapter({
           x: cell('×', 'color:var(--text-3)'),
           b: cell(fmt(B[i], 3), 'background:var(--surface);border:1px solid var(--border);border-radius:6px'),
           d: cell('↓', 'color:var(--text-3)'),
-          p: cell(fmt(prod, 3), 'background:var(--langkah-bg);border:1px solid var(--langkah-bd);border-radius:6px;font-weight:700'),
+          p: cell(fmt(prod, 3), 'background:var(--surface-2);border:1px solid var(--axis);border-radius:6px;font-weight:700'),
         };
         cols.push(c);
         rows[0].push(c.a); rows[1].push(c.x); rows[2].push(c.b); rows[3].push(c.d); rows[4].push(c.p);
@@ -80,7 +80,7 @@ ML.chapter({
       sumEl = h('div', { style: 'margin-top:10px;font-size:17px' },
         h('span', { class: 'muted' }, 'Jumlahkan semua hasil kali: '),
         h('span', { style: 'font-family:var(--mono)', html: A.map((v, i) => fmtp(v * B[i], 3)).join(' + ') + ' = ' }),
-        h('span', { style: 'font-family:var(--mono);font-size:22px;font-weight:700;padding:2px 10px;border-radius:8px;border:2px solid var(--langkah-bd)' }, fmt(total, 3)),
+        h('span', { style: 'font-family:var(--mono);font-size:22px;font-weight:700;padding:2px 10px;border-radius:8px;border:2px solid var(--axis)' }, fmt(total, 3)),
         h('span', { class: 'muted small' }, '  ← satu angka (skalar)'));
       visual.append(h('div', { style: 'overflow-x:auto' }, grid), sumEl);
     }

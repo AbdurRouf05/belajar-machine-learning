@@ -20,13 +20,13 @@ ML.chapter({
     const seen = Array(N_CARD).fill(0);
     let epoch = 0, epTimer = null;
     const epInfo = h('div', { class: 'grid3', style: 'margin:10px 0' });
-    const bEp = h('button', { class: 'primary', onclick: () => runEpoch() }, '▶ Jalankan 1 epoch');
+    const bEp = h('button', { class: 'primary', onclick: () => runEpoch() }, 'Jalankan 1 epoch');
     const bEpReset = h('button', { onclick: () => { stopEp(); epoch = 0; seen.fill(0); paintCards(-1); } }, '↺ Reset');
     function paintCards(active) {
       cards.forEach((c, i) => {
         const on = i === active;
         c.style.borderColor = on ? 'var(--accent)' : 'var(--border)';
-        c.style.background = on ? 'var(--rumus-bg)' : 'var(--surface)';
+        c.style.background = on ? 'var(--surface-2)' : 'var(--surface)';
         c.style.transform = on ? 'translateY(-3px)' : 'none';
         c.querySelector('[data-c]').textContent = 'dilihat ' + seen[i] + '×';
       });

@@ -170,7 +170,7 @@ ML.chapter({
       requestAnimationFrame(tick);
     }
     const btns1 = h('div', { style: 'display:flex;gap:6px;flex-wrap:wrap;margin:8px 0' },
-      h('button', { class: 'primary', onclick: cariOtomatis }, '🔍 Cari otomatis'),
+      h('button', { class: 'primary', onclick: cariOtomatis }, 'Cari otomatis'),
       h('button', { onclick: () => { stopAnim(); setW(1, 1, -4); upd1(); } }, 'Contoh catatan: w=[1,1], b=−4'),
       h('button', { onclick: () => { stopAnim(); setW(2, 2, -8); upd1(); } }, 'Garis sama, w dobel'),
       h('button', { onclick: () => { stopAnim(); setW(0.5, 1.2, -3); upd1(); } }, 'Garis asal-asalan'));

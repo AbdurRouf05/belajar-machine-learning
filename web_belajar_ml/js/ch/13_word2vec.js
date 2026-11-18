@@ -235,7 +235,7 @@ ML.chapter({
         const lo = Math.max(0, i - W), hi = Math.min(t.length - 1, i + W);
         const jendela = t.map((x, j) => {
           if (j === i) return `<b class="c1">[${esc(x)}]</b>`;
-          if (j >= lo && j <= hi) return `<span style="background:var(--coba-bg);border:1px solid var(--coba-bd);border-radius:4px;padding:0 4px">${esc(x)}</span>`;
+          if (j >= lo && j <= hi) return `<span style="background:var(--surface-2);border:1px solid var(--axis);border-radius:4px;padding:0 4px">${esc(x)}</span>`;
           return `<span style="color:var(--text-3)">${esc(x)}</span>`;
         }).join(' ');
         const pairs = [];
@@ -258,7 +258,7 @@ ML.chapter({
     // ---------- CBOW vs Skip-gram ----------
     el.append(h('h3', {}, 'Dua Cara Melatih: CBOW vs Skip-gram'));
     el.append(h('p', { class: 'small muted', html: 'Contoh kalimat: "kucing adalah <b>hewan</b> yang lucu", target = hewan, window = 2.' }));
-    const chip = (t, strong) => `<span style="display:inline-block;padding:2px 10px;margin:2px 0;border-radius:6px;border:1px solid var(--border);background:${strong ? 'var(--rumus-bg)' : 'var(--surface-2)'};${strong ? 'font-weight:700' : ''}">${t}</span>`;
+    const chip = (t, strong) => `<span style="display:inline-block;padding:2px 10px;margin:2px 0;border-radius:6px;border:1px solid var(--border);background:${strong ? 'var(--surface-2)' : 'var(--surface-2)'};${strong ? 'font-weight:700' : ''}">${t}</span>`;
     const ctxCol = ['kucing', 'adalah', 'yang', 'lucu'].map((w) => chip(w)).join('<br>');
     const model = `<span style="display:inline-block;padding:8px 12px;border-radius:8px;border:1.5px dashed var(--axis)">model</span>`;
     const arr = '<span style="font-size:20px;color:var(--text-3)">→</span>';

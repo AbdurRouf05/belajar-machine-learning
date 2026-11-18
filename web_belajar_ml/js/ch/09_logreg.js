@@ -194,7 +194,7 @@ ML.chapter({
       if (st.r >= 40) return;
       const c = calc(st.w, st.b); st.hist.push({ r: st.r, w: st.w, b: st.b, ...c });
       st.w = st.next.w; st.b = st.next.b; st.r++; renderEx();
-    } }, 'Putaran berikutnya ▶');
+    } }, 'Putaran berikutnya');
     const bReset = h('button', { onclick: resetEx }, '↺ Ulang dari awal');
     el.append(box('langkah', 'Langkah Hitung (bisa diklik terus)', h('div', {},
       h('div', { style: 'display:flex;gap:8px;flex-wrap:wrap;margin-bottom:6px' }, bNext, bReset), roundLbl, stepOut,
@@ -237,7 +237,7 @@ ML.chapter({
     const note = h('div', { class: 'small muted' });
     const btnC1 = h('button', { onclick: () => { addCls = 1; updBtns(); } }, '● Tambah kelas 1');
     const btnC0 = h('button', { onclick: () => { addCls = 0; updBtns(); } }, '■ Tambah kelas 0');
-    const btnTrain = h('button', { class: 'primary', onclick: () => { running ? stop() : start(); } }, '▶ Latih');
+    const btnTrain = h('button', { class: 'primary', onclick: () => { running ? stop() : start(); } }, 'Latih');
     const btnStep = h('button', { onclick: () => { stop(); epochStep(); refresh(); } }, 'Langkah (1 epoch)');
     const btnReset = h('button', { onclick: () => { stop(); resetModel(); refresh(); } }, '↺ Reset bobot');
     const cbCont = h('input', { type: 'checkbox', checked: true, onchange: () => { showCont = cbCont.checked; pG.redraw(); } });
@@ -259,7 +259,7 @@ ML.chapter({
       };
       requestAnimationFrame(tick);
     }
-    function stop() { running = false; btnTrain.textContent = '▶ Latih'; }
+    function stop() { running = false; btnTrain.textContent = 'Latih'; }
     updBtns();
 
     const pG = ML.plot({
@@ -311,7 +311,7 @@ ML.chapter({
     function refresh() {
       const L = meanLoss(), a = acc();
       stats.innerHTML = `epoch: <b>${epoch}</b> · loss: <b>${fmt(L, 3)}</b> · akurasi: <b>${fmt(a * 100, 0)}%</b> · w = [${fmt(gw[0], 2)}, ${fmt(gw[1], 2)}] · b = ${fmt(gbias, 2)} · titik: ${pts.length}`;
-      if (lastPreset === 'cincin' && epoch > 30) note.innerHTML = '⚠️ Data cincin: kelas 1 di tengah, kelas 0 mengelilingi. <b>Satu garis lurus mustahil memisahkannya</b>, jadi akurasi mentok dan loss tidak bisa turun banyak. Inilah keterbatasan Logistic Regression: batasnya selalu <b>linear</b>. Solusinya ada di bab SVM (kernel trick).';
+      if (lastPreset === 'cincin' && epoch > 30) note.innerHTML = 'Data cincin: kelas 1 di tengah, kelas 0 mengelilingi. <b>Satu garis lurus mustahil memisahkannya</b>, jadi akurasi mentok dan loss tidak bisa turun banyak. Inilah keterbatasan Logistic Regression: batasnya selalu <b>linear</b>. Solusinya ada di bab SVM (kernel trick).';
       else if (epoch >= MAXEP) note.textContent = `Berhenti otomatis setelah ${MAXEP} epoch. Tekan Latih lagi untuk lanjut.`;
       else note.textContent = '';
       pG.redraw(); pL.redraw();

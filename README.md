@@ -2,7 +2,7 @@
 
 Urutan belajar yang disarankan: mulai dari folder `00` lalu lanjut ke folder berikutnya.
 
-## 🌐 [web_belajar_ml/](web_belajar_ml/index.html) — Web Interaktif
+## [web_belajar_ml/](web_belajar_ml/index.html) — Web Interaktif
 Buka **`web_belajar_ml/index.html`** (klik dua kali, tanpa internet, tanpa install). Isinya 14 bab dari dasar sampai Word2Vec. Tiap bab punya analogi, rumus, langkah hitung yang angkanya berubah langsung saat input diubah, grafik interaktif (geser slider, klik/drag titik), kuis, dan progres belajar yang tersimpan otomatis.
 
 ## [00_konsep_dasar/](00_konsep_dasar/)

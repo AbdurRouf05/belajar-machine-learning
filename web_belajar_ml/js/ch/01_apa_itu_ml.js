@@ -105,14 +105,14 @@ ML.chapter({
       video → MediaPipe (21 titik × x,y,z = <b>63 fitur</b>) → StandardScaler → <b>SVM</b> → huruf "A".`));
 
     el.append(h('h2', {}, 'Cara Belajar di Web Ini'));
-    el.append(ML.html(`<div class="grid3">
-      <div class="box analogi" style="margin:0"><div class="box-title"><span class="ico">💡</span>Analogi</div>Penjelasan pakai kejadian sehari-hari.</div>
-      <div class="box rumus" style="margin:0"><div class="box-title"><span class="ico">📐</span>Rumus</div>Rumusnya, plus arti tiap simbol.</div>
-      <div class="box langkah" style="margin:0"><div class="box-title"><span class="ico">🧮</span>Langkah Hitung</div>Hitungan langkah demi langkah dengan angka kecil.</div>
-      <div class="box coba" style="margin:0"><div class="box-title"><span class="ico">🎮</span>Coba Sendiri</div>Geser slider dan klik grafik. Angkanya berubah langsung.</div>
-      <div class="box bisindo" style="margin:0"><div class="box-title"><span class="ico">🤟</span>BISINDO</div>Kaitannya dengan tugas akhir.</div>
-      <div class="box info" style="margin:0"><div class="box-title"><span class="ico">✅</span>Kuis</div>Cek pemahaman di akhir bab.</div>
-    </div>`));
+    el.append(ML.html(`<p>Setiap bab disusun dengan urutan yang sama:</p>
+      <ol style="padding-left:22px;margin:4px 0">
+        <li><b>Analogi</b>: penjelasan pakai kejadian sehari-hari.</li>
+        <li><b>Rumus</b>: rumusnya, plus arti setiap simbol.</li>
+        <li><b>Langkah hitung</b>: hitungan langkah demi langkah dengan angka kecil.</li>
+        <li><b>Coba sendiri</b>: geser slider atau klik grafik, angkanya ikut berubah.</li>
+        <li><b>Kuis</b>: beberapa soal untuk mengecek pemahaman.</li>
+      </ol>`));
 
     el.append(h('h2', {}, 'Kuis Singkat'));
     el.append(ML.quiz([

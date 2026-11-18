@@ -70,7 +70,7 @@ ML.chapter({
       ['+', 'Feature Creation (bonus)', 'Membuat fitur tambahan sendiri pakai logika/pengetahuan kita.', 'panjang teks, jumlah tanda seru, jarak ujung jempol ke telunjuk'],
     ];
     const treeEl = h('div', { style: 'margin:10px 0 10px 4px' },
-      h('div', { style: 'display:inline-block;font-weight:700;padding:6px 14px;border-radius:8px;background:var(--rumus-bg);border:1px solid var(--rumus-bd)' }, '🌂 FEATURE ENGINEERING  (data mentah → fitur angka siap pakai)'));
+      h('div', { style: 'display:inline-block;font-weight:700;padding:6px 14px;border-radius:8px;background:var(--surface-2);border:1px solid var(--axis)' }, 'FEATURE ENGINEERING  (data mentah → fitur angka siap pakai)'));
     const branch = h('div', { style: 'margin-left:22px;border-left:2px solid var(--border);padding-left:0' });
     tree.forEach(([k, name, desc, ex]) => {
       branch.append(h('div', { style: 'position:relative;padding:8px 0 4px 26px' },

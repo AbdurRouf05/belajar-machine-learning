@@ -106,7 +106,7 @@ ML.chapter({
     ];
     const fl = ML.flow(steps.map((s) => ({ t: s.t, s: s.s })));
     const flInfo = h('div', { class: 'box bisindo' });
-    const setNode = (i) => { fl.set(i); flInfo.innerHTML = `<div class="box-title"><span class="ico">🤟</span>${steps[i].t}</div>${steps[i].d}<br><a href="#${steps[i].bab}">→ bab terkait</a>`; };
+    const setNode = (i) => { fl.set(i); flInfo.innerHTML = `<div class="box-title">${steps[i].t}</div>${steps[i].d}<br><a href="#${steps[i].bab}">→ bab terkait</a>`; };
     fl.nodes.forEach((d, i) => { d.style.cursor = 'pointer'; d.addEventListener('mouseenter', () => setNode(i)); d.addEventListener('click', () => setNode(i)); });
     setNode(0);
     el.append(fl.el, flInfo);

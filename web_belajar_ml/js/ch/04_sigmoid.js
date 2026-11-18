@@ -196,9 +196,9 @@ ML.chapter({
         arr('→ Σ', span2 + 'grid-column:4'),
         h('div', { style: nodeSt + ';' + span2 + 'grid-column:5', html: `<span class="small muted" style="font-family:var(--sans)">jumlah</span><br>${fmt(sum, 3)}` }),
         arr(`+ b (${fmt(v.b, 1)}) →`, span2 + 'grid-column:6'),
-        h('div', { style: nodeSt + ';' + span2 + 'grid-column:7;border:2px solid var(--langkah-bd)', html: `<span class="small muted" style="font-family:var(--sans)">skor</span><br><b>z = ${fmt(z, 3)}</b>` }),
+        h('div', { style: nodeSt + ';' + span2 + 'grid-column:7;border:2px solid var(--axis)', html: `<span class="small muted" style="font-family:var(--sans)">skor</span><br><b>z = ${fmt(z, 3)}</b>` }),
         arr('→ σ →', span2 + 'grid-column:8'),
-        h('div', { style: nodeSt + ';' + span2 + 'grid-column:9;border:2px solid var(--langkah-bd)', html: `<span class="small muted" style="font-family:var(--sans)">peluang</span><br><b>${fmt(p, 4)}</b> = ${pct(p)}` }),
+        h('div', { style: nodeSt + ';' + span2 + 'grid-column:9;border:2px solid var(--axis)', html: `<span class="small muted" style="font-family:var(--sans)">peluang</span><br><b>${fmt(p, 4)}</b> = ${pct(p)}` }),
         arr('→ ≥ 0.5? →', span2 + 'grid-column:10'),
         h('div', { style: nodeSt + ';' + span2 + 'grid-column:11;font-family:var(--sans)', html: decHTML(p) }));
       neuron.append(g);

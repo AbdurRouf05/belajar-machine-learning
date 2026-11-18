@@ -51,7 +51,7 @@ ML.chapter({
     const gradOf = (w) => 2 * (w * X - Y) * X;
     const slLr = ML.slider({ label: 'Learning rate (lr)', min: 0.01, max: 0.3, step: 0.01, value: LR0, digits: 2, onInput: () => reset() });
     const slW = ML.slider({ label: 'Bobot awal w', min: -2, max: 8, step: 0.1, value: W0, digits: 1, onInput: () => reset() });
-    const bStep = h('button', { class: 'primary', onclick: () => { stopAuto(); stepOnce(); } }, '▶ Langkah 1x');
+    const bStep = h('button', { class: 'primary', onclick: () => { stopAuto(); stepOnce(); } }, 'Langkah 1x');
     const bAuto = h('button', { onclick: () => (timer ? stopAuto() : startAuto()) }, '⏩ Auto');
     const bReset = h('button', { onclick: () => { slLr.value = LR0; slW.value = W0; reset(); } }, '↺ Reset');
     const status = h('div', { style: 'margin:6px 0' });
@@ -125,7 +125,7 @@ ML.chapter({
       const lr = slLr.value, w = curW(), k = 1 - 8 * lr;
       // status learning rate (untuk soal ini: w bergerak dengan faktor 1 − 8·lr tiap langkah)
       let st;
-      if (lr < 0.03) st = '<span class="badge" style="background:var(--surface-2)">🐢 learning rate kecil: turun pelan sekali, butuh banyak putaran</span>';
+      if (lr < 0.03) st = '<span class="badge" style="background:var(--surface-2)">learning rate kecil: turun pelan sekali, butuh banyak putaran</span>';
       else if (k >= 0) st = '<span class="badge good">✓ learning rate pas: turun mulus ke lembah</span>';
       else if (Math.abs(k) < 1 - 1e-9) st = '<span class="badge" style="background:var(--surface-2)">↔ learning rate besar: melompati lembah (zig-zag), tapi masih sampai</span>';
       else if (Math.abs(Math.abs(k) - 1) < 1e-9) st = '<span class="badge bad">✗ learning rate terlalu besar: bolak-balik di tempat, tidak pernah sampai</span>';
