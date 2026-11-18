@@ -1,0 +1,9 @@
+# video & file besar (tidak ikut repo)
+*.mp4
+*.wav
+edit_video/
+# proyek kelompok punya repo/tempat sendiri
+tugas_akhir_bisindo/
+# python
+__pycache__/
+.ipynb_checkpoints/
